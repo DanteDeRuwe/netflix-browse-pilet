@@ -41,7 +41,8 @@
   "scripts": {
     "start": "pilet debug",
     "build": "pilet build",
-    "upgrade": "pilet upgrade"
+    "upgrade": "pilet upgrade",
+    "publish": "./publish.sh"
   },
   "main": "dist/index.js",
   "files": [
