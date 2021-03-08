@@ -10,11 +10,36 @@ interface BrowseProps {
 const Browse: React.FC<BrowseProps> = ({ MovieTile }) => (
   <div>
     <Hero />
-    <TitleList MovieTile={MovieTile} title="Top TV picks for Jack" url="discover/tv?sort_by=popularity.desc&page=1" />
-    <TitleList MovieTile={MovieTile} title="Trending now" url="discover/movie?sort_by=popularity.desc&page=1" />
-    <TitleList MovieTile={MovieTile} title="Most watched Horror" url="genre/27/movies?sort_by=popularity.desc&page=1" />
-    <TitleList MovieTile={MovieTile} title="Sci-Fi greats" url="genre/878/movies?sort_by=popularity.desc&page=1" />
-    <TitleList MovieTile={MovieTile} title="Comedy magic" url="genre/35/movies?sort_by=popularity.desc&page=1" />
+    <TitleList
+      media_type="tv"
+      MovieTile={MovieTile}
+      title="Top TV picks for Jack"
+      url="discover/tv?sort_by=popularity.desc&page=1"
+    />
+    <TitleList
+      media_type="movie"
+      MovieTile={MovieTile}
+      title="Trending now"
+      url="discover/movie?sort_by=popularity.desc&page=1"
+    />
+    <TitleList
+      media_type="movie"
+      MovieTile={MovieTile}
+      title="Most watched Horror"
+      url="genre/27/movies?sort_by=popularity.desc&page=1"
+    />
+    <TitleList
+      media_type="movie"
+      MovieTile={MovieTile}
+      title="Sci-Fi greats"
+      url="genre/878/movies?sort_by=popularity.desc&page=1"
+    />
+    <TitleList
+      media_type="movie"
+      MovieTile={MovieTile}
+      title="Comedy magic"
+      url="genre/35/movies?sort_by=popularity.desc&page=1"
+    />
   </div>
 );
 

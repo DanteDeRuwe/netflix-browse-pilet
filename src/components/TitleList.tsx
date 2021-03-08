@@ -5,6 +5,7 @@ import { MovieTileProps } from '../models/MovieTileProps';
 export interface TitleListProps {
   url: string;
   title: string;
+  media_type: 'tv' | 'movie';
   MovieTile: React.FC<MovieTileProps>;
 }
 
@@ -38,6 +39,8 @@ const TitleList: React.FC<TitleListProps> = props => {
       return (
         <props.MovieTile
           key={title.id}
+          media_type={props.media_type}
+          movieId={title.id}
           title={name}
           score={title.vote_average}
           overview={title.overview}
