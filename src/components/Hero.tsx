@@ -6,12 +6,11 @@ const Hero: React.FC = () => (
     id="hero"
     className="Hero"
     style={{
-      backgroundImage:
-        'url(http://www.maximumwall.com/wp-content/uploads/2016/11/fond-ecran-wallpaper-image-narcos-19.jpg)',
+      backgroundImage: 'url(https://imgur.com/YbHXV0Z.png)',
     }}
   >
     <div className="content">
-      <img className="logo" src="http://www.returndates.com/backgrounds/narcos.logo.png" alt="narcos background" />
+      <img className="logo" src="https://i.imgur.com/0YCMbxg.png" alt="narcos background" />
       <h2>Season 2 now available</h2>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque id quam sapiente unde voluptatum alias vero
