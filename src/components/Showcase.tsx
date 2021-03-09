@@ -1,18 +1,18 @@
 import * as React from 'react';
 import { MovieTileProps, ShowCaseProps } from '../models/proptypes';
-import { ApiData } from '../models/types';
+import { ApiData, ApiDataEntry } from '../models/types';
 
 const apiKey = '87dfa1c669eea853da609d4968d294be';
 
-const ShowCase: React.FC<ShowCaseProps> = props => {
+const Showcase: React.FC<ShowCaseProps> = props => {
   const [mounted, setMounted] = React.useState(false);
   const [data, setData] = React.useState<ApiData>({});
 
   const loadContent = () => {
     let requestUrl = 'https://api.themoviedb.org/3/' + props.url + '&api_key=' + apiKey;
     fetch(requestUrl)
-      .then(response => response.json())
-      .then(data => setData(data))
+      .then(res => res.json())
+      .then(setData)
       .catch(console.error);
   };
 
@@ -21,38 +21,39 @@ const ShowCase: React.FC<ShowCaseProps> = props => {
     loadContent();
   }, [props.url]);
 
-  let titles: any[] = [];
+  let titles: JSX.Element[] = [];
 
   if (data.results) {
-    titles = data.results.map((title, i) => {
-      if (i >= 5) return <div key={title.id}></div>;
-
-      let backDrop = 'http://image.tmdb.org/t/p/original' + title.backdrop_path;
-      let name = title.name ? title.name : title.original_title;
-
-      let movieTileProps: MovieTileProps = {
-        media_type: props.media_type,
-        movieId: title.id,
-        title: name,
-        score: title.vote_average,
-        overview: title.overview,
-        backdrop: backDrop,
-      };
-
+    const slice = data.results.slice(0, 5);
+    titles = slice.map(title => {
+      const movieTileProps: MovieTileProps = createMovieTileProps(title, props);
       return <props.MovieTile key={title.id} {...movieTileProps}></props.MovieTile>;
     });
-  } else {
-    titles = [<p style={{ color: 'gray' }}> nothing was found</p>];
   }
 
   return (
     <div className="TitleList" data-loaded={mounted}>
       <div className="Title">
         <h1>{props.title}</h1>
-        <div className="titles-wrapper">{titles}</div>
+        <div className="titles-wrapper">
+          {data.results ? titles : <p style={{ color: 'gray' }}> nothing was found</p>}
+        </div>
       </div>
     </div>
   );
 };
 
-export default ShowCase;
+export default Showcase;
+
+/*
+Helpers
+*/
+
+const createMovieTileProps = (title: ApiDataEntry, props: ShowCaseProps) => ({
+  media_type: props.media_type,
+  movieId: title.id,
+  title: title.name || title.original_title,
+  score: title.vote_average,
+  overview: title.overview,
+  backdrop: `http://image.tmdb.org/t/p/original/${title.backdrop_path}`,
+});
