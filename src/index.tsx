@@ -3,6 +3,7 @@ import { PiletApi } from 'piral-tryout';
 import { Link } from 'react-router-dom';
 import Browse from './components/Browse';
 import { MovieTileProps } from './models/MovieTileProps';
+import './style.scss';
 
 export function setup(app: PiletApi) {
   app.registerMenu(() => <Link to="/browse">Browse</Link>);

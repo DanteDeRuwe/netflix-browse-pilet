@@ -1,6 +1,6 @@
 {
   "name": "browse",
-  "version": "1.2.5",
+  "version": "1.2.6",
   "description": "",
   "keywords": [
     "pilet"
@@ -20,7 +20,7 @@
     "path-to-regexp": "1.8.0",
     "piral-cli": "^1.0.0-pre.2137",
     "piral-cli-webpack": "^0.12.4",
-    "piral-tryout": "1.1.18",
+    "piral-tryout": "1.1.19",
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "react-router": "5.2.0",
