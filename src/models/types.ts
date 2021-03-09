@@ -1,12 +1,13 @@
-
-export interface FetchResult {
-    response?: ApiData;
-    error: any;
+export interface ShowCaseData {
+    url: string;
+    title: string;
+    media_type: 'tv' | 'movie';
 }
 
 export interface ApiData {
     results?: ApiDataEntry[]
 }
+
 
 export interface ApiDataEntry {
     name: string;
