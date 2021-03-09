@@ -22,12 +22,12 @@ const heroProps: HeroData = {
 };
 
 const Browse: React.FC<BrowseProps> = ({ MovieTile }) => {
-  const sectionElements = sectiondata.map((el, i) => <Showcase MovieTile={MovieTile} {...el} key={i}></Showcase>);
+  const showcases = sectiondata.map((el, i) => <Showcase MovieTile={MovieTile} {...el} key={i}></Showcase>);
 
   return (
     <div className="Browse">
       <Hero {...heroProps}></Hero>
-      {sectionElements}
+      {showcases}
     </div>
   );
 };

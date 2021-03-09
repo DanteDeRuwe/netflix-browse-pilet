@@ -9,5 +9,6 @@ export function setup(app: PiletApi) {
   app.registerMenu(() => <Link to="/browse">Browse</Link>);
 
   const MovieTile: React.FC<MovieTileProps> = props => <app.Extension name="MovieTile" params={props}></app.Extension>;
-  app.registerPage('/browse', () => <Browse MovieTile={MovieTile}></Browse>);
+  const BrowsePage: React.FC = () => <Browse MovieTile={MovieTile}></Browse>;
+  app.registerPage('/browse', BrowsePage);
 }
