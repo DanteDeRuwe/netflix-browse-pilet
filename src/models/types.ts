@@ -22,3 +22,10 @@ export interface ShowCaseData {
     title: string;
     media_type: 'tv' | 'movie';
 }
+
+export interface HeroData {
+    backgroundUrl: string;
+    logoUrl: string;
+    title: string;
+    text: string;
+}

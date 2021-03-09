@@ -1,4 +1,4 @@
-import { ShowCaseData } from './types';
+import { HeroData, ShowCaseData } from './types';
 
 export interface BrowseProps {
     MovieTile: React.FC<MovieTileProps>;
@@ -7,6 +7,8 @@ export interface BrowseProps {
 export interface ShowCaseProps extends ShowCaseData {
     MovieTile: React.FC<MovieTileProps>;
 }
+
+export interface HeroProps extends HeroData { }
 
 export interface MovieTileProps {
     backdrop: string;
