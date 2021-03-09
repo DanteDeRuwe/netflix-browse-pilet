@@ -1,19 +1,12 @@
 import * as React from 'react';
-import data from '../models/data';
-import { MovieTileProps } from '../models/MovieTileProps';
-
-export interface TitleListProps {
-  url: string;
-  title: string;
-  media_type: 'tv' | 'movie';
-  MovieTile: React.FC<MovieTileProps>;
-}
+import { MovieTileProps, ShowCaseProps } from '../models/proptypes';
+import { ApiData } from '../models/types';
 
 const apiKey = '87dfa1c669eea853da609d4968d294be';
 
-const TitleList: React.FC<TitleListProps> = props => {
+const ShowCase: React.FC<ShowCaseProps> = props => {
   const [mounted, setMounted] = React.useState(false);
-  const [data, setData] = React.useState<data>({});
+  const [data, setData] = React.useState<ApiData>({});
 
   const loadContent = () => {
     let requestUrl = 'https://api.themoviedb.org/3/' + props.url + '&api_key=' + apiKey;
@@ -36,17 +29,17 @@ const TitleList: React.FC<TitleListProps> = props => {
 
       let backDrop = 'http://image.tmdb.org/t/p/original' + title.backdrop_path;
       let name = title.name ? title.name : title.original_title;
-      return (
-        <props.MovieTile
-          key={title.id}
-          media_type={props.media_type}
-          movieId={title.id}
-          title={name}
-          score={title.vote_average}
-          overview={title.overview}
-          backdrop={backDrop}
-        ></props.MovieTile>
-      );
+
+      let movieTileProps: MovieTileProps = {
+        media_type: props.media_type,
+        movieId: title.id,
+        title: name,
+        score: title.vote_average,
+        overview: title.overview,
+        backdrop: backDrop,
+      };
+
+      return <props.MovieTile key={title.id} {...movieTileProps}></props.MovieTile>;
     });
   } else {
     titles = [<p style={{ color: 'gray' }}> nothing was found</p>];
@@ -62,4 +55,4 @@ const TitleList: React.FC<TitleListProps> = props => {
   );
 };
 
-export default TitleList;
+export default ShowCase;

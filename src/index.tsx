@@ -2,7 +2,7 @@ import * as React from 'react';
 import { PiletApi } from 'piral-tryout';
 import { Link } from 'react-router-dom';
 import Browse from './components/Browse';
-import { MovieTileProps } from './models/MovieTileProps';
+import { MovieTileProps } from './models/proptypes';
 import './style.scss';
 
 export function setup(app: PiletApi) {
