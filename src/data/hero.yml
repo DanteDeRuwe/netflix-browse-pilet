@@ -1,4 +1,15 @@
 backgroundUrl: 'https://imgur.com/YbHXV0Z.png'
 logoUrl: 'https://i.imgur.com/0YCMbxg.png'
 title: 'Season 2 now available'
-text: In the second season, notorious drug kingpin Pablo Escobar is on the run, with the Colombian authorities in relentless pursuit -- and determined to put an end to his illegal activities.
+text: "In the second season, notorious drug kingpin Pablo Escobar is on the run,
+with the Colombian authorities in relentless pursuit -- and determined to put an
+end to his illegal activities."
+buttons:   
+  - primary : true
+    text: Watch now
+    href: "/watch?id=63351&media_type=tv"
+  - primary : false
+    text: Learn more
+    href: "http://www.netflix.com/title/80025172"
+
+

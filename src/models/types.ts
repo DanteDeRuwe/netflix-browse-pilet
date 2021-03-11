@@ -29,4 +29,5 @@ export interface HeroData {
     logoUrl: string;
     title: string;
     text: string;
+    buttons: { primary: boolean, href: string, text: string }[]
 }
