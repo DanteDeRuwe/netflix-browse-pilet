@@ -1,11 +1,6 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
-
-export interface HeroButtonProps {
-  primary: boolean;
-  text: string;
-  href?: string;
-}
+import { HeroButtonProps } from '../models/proptypes';
 
 const HeroButton: React.FC<HeroButtonProps> = props => {
   if (props.href.startsWith('http'))

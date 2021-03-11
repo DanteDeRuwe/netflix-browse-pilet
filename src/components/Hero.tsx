@@ -8,7 +8,7 @@ const Hero: React.FC<HeroProps> = props => {
   return (
     <div id="hero" className="Hero" style={{ backgroundImage: `url(${props.backgroundUrl})` }}>
       <div className="content">
-        <img className="logo" src="https://i.imgur.com/0YCMbxg.png" alt="narcos background" />
+        <img className="logo" src={props.logoUrl} />
         <h2>{props.title}</h2>
         <p>{props.text}</p>
         <div className="button-wrapper">{buttons}</div>

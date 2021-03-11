@@ -18,3 +18,9 @@ export interface MovieTileProps {
     movieId: string;
     media_type: 'tv' | 'movie';
 }
+
+export interface HeroButtonProps {
+    primary: boolean;
+    text: string;
+    href?: string;
+}

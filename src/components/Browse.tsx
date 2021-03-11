@@ -9,7 +9,7 @@ const showcasesdata = require('../data/showcases.yml') as ShowCaseData[];
 const herodata = require('../data/hero.yml') as HeroData;
 
 const Browse: React.FC<BrowseProps> = ({ MovieTile }) => {
-  const showcases = showcasesdata.map((el, i) => <Showcase MovieTile={MovieTile} {...el} key={i}></Showcase>);
+  const showcases = showcasesdata.map((data, i) => <Showcase MovieTile={MovieTile} {...data} key={i}></Showcase>);
   return (
     <div className="Browse">
       <Hero {...herodata}></Hero>
