@@ -22,5 +22,7 @@ export interface HeroData {
     logoUrl: string;
     title: string;
     text: string;
+    movieId: string;
+    media_type: 'tv' | 'movie';
     buttons: { primary: boolean, href: string, text: string }[]
 }

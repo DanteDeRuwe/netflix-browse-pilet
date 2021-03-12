@@ -8,11 +8,11 @@ import Showcase from './Showcase';
 const showcasesdata = require('../data/showcases.yml') as ShowCaseData[];
 const herodata = require('../data/hero.yml') as HeroData;
 
-const Browse: React.FC<BrowseProps> = ({ MovieTile }) => {
-  const showcases = showcasesdata.map((data, i) => <Showcase MovieTile={MovieTile} {...data} key={i}></Showcase>);
+const Browse: React.FC<BrowseProps> = props => {
+  const showcases = showcasesdata.map((data, i) => <Showcase MovieTile={props.MovieTile} {...data} key={i}></Showcase>);
   return (
     <div className="Browse">
-      <Hero {...herodata}></Hero>
+      <Hero {...herodata} FavoritesButton={props.FavoritesButton}></Hero>
       {showcases}
     </div>
   );
